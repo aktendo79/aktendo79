@@ -1,1 +1,16 @@
+Imports IO
+Imports System
 
+Public Class Form1
+
+  Private Sub BtnCalcola_Click(sender As Object, e As EventArgs) Handles BtnCalcola.Click
+
+    a = 0
+
+      For a = 0 to (verbali - 1)
+
+        a = a + 1
+
+  End Sub
+
+End Class
