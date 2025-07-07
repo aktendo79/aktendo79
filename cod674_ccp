@@ -1,16 +1,47 @@
 Imports IO
 Imports System
 
+Dim parte_fissa As Integer
+Dim primo As Integer
+Dim numero As Integer
+Dim verbale_completo As Integer
+Dim calcolo As Integer
+
 Public Class Form1
 
   Private Sub BtnCalcola_Click(sender As Object, e As EventArgs) Handles BtnCalcola.Click
 
-    a = 0
+  parte_fissa = Int(TxtParteFissa.Text)
+  primo = Int(TxtPrimo.Text)
+  numero = Int(TxtNumero.Text)
 
-      For a = 0 to (verbali - 1)
+    a = 0
+    For a = 0 to (numero - 1)
+
+        If Len(primo + a) = 1
+          primo = 000 & primo
+        End If
+        If Len(primo + a) = 2
+          primo = 00 & primo
+        End If
+        If Len(primo + a) = 3
+          primo = 0 & primo
+        End If
+        If Len(primo + a) = 4
+          primo = primo
+        End If
+
+        verbale_completo = parte_fissa & 0000 & primo
+        calcolo = Int(verbale_completo/93)
+        calcolo = calcolo * 93
+        calcolo = verbale_completo - calcolo
+      
+        If Len(calcolo) <= 1
+          calcolo = 0 & calcolo
+        End If
 
         a = a + 1
 
+    End For
   End Sub
-
 End Class
